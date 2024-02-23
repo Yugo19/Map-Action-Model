@@ -1,0 +1,5 @@
+outs:
+    - md5: 9be7221019f93e9674ec4423cdceacab.dir
+      size: 1507039154
+      path: data
+      nfiles: 764
