@@ -8,6 +8,7 @@ from steps import m_a_model
 from steps import train_model
 from steps import test_step
 from steps import create_dataloaders
+from steps import plot_loss_curves
 
 
 
@@ -21,7 +22,7 @@ def zenml_training_pipeline():
                                                                               batch_size = batch_size)
     model, loss_fn= m_a_model(num_classes)
     model, results = train_model(model ,training_dataloader, epochs, loss_fn)
-    test_loss, test_acc = test_step(model, training_dataloader, loss_fn)
-    
+    test_loss, test_acc, results = test_step(model, training_dataloader, loss_fn, results, epochs)
+    plot_loss_curves(results)
     
     

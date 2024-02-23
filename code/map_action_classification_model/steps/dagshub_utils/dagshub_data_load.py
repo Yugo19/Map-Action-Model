@@ -23,6 +23,12 @@ def download_and_organize_data() -> Tuple[
     Annotated[str, "test_dir"],
     Annotated[int, "batch_size"],
 ]:
+    """
+    Download and organize data from a CSV file and DagsHub repository.
+
+    Returns:
+        Tuple[str, str, str, int]: Directories for train, valid, and test, and batch size.
+    """
     # Load data from a CSV file
     ds = datasources.get(DAGSHUB_FULL_REPO, os.environ.get("DATASOURCE_NAME"))
     ds = ds.all().dataframe
@@ -67,17 +73,35 @@ def download_and_organize_data() -> Tuple[
     print(files)
 
     # Organize files into train, valid, and test directories
-    if len(files) > 0:
-        for i, split in enumerate(['valid', 'test', 'train']):
-            for n in data_volumes[i * 5: (i + 1) * 5]:
-                folder = files[n].split('/')[1]
-                name = files[n].split('/')[-1]
-                try:
-                    os.makedirs(os.path.join(data_dir, split, folder))
-                except FileExistsError:
-                    pass  # Directory already exists
-                os.rename(files[n], os.path.join(data_dir, split, folder, name))
-                
+    """
+    for n in data_volumes[:10]:
+        folder = files[n].split('/')[1]
+        name = files[n].split('/')[-1]
+        try:
+            os.makedirs(os.path.join(data_dir, valid_dir, folder))
+        except FileExistsError:
+            pass  # Directory already exists
+        os.rename(files[n], os.path.join(data_dir, valid_dir, folder, name))
+    """
+
+    for n in data_volumes[:30]:
+        folder = files[n].split('/')[1]
+        name = files[n].split('/')[-1]
+        try:
+            os.makedirs(os.path.join(data_dir, test_dir, folder))
+        except FileExistsError:
+            pass  # Directory already exists
+        os.rename(files[n], os.path.join(data_dir, test_dir, folder, name))
+    
+    for n in data_volumes[30:]:
+        folder = files[n].split('/')[1]
+        name = files[n].split('/')[-1]
+        try:
+            os.makedirs(os.path.join(data_dir, train_dir, folder))
+        except FileExistsError:
+            pass  # Directory already exists
+        os.rename(files[n], os.path.join(data_dir, train_dir, folder, name))
+                    
     print(f"{data_dir}/{train_dir}")
     train_dir = f"{data_dir}/{train_dir}"
     valid_dir = f"{data_dir}/{valid_dir}"
@@ -85,6 +109,3 @@ def download_and_organize_data() -> Tuple[
     batch_size = 20
 
     return  train_dir, valid_dir, test_dir, batch_size
-    
-
-
