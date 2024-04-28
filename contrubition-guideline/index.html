@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Setup and Run - Map Action Model</title>
+        <title>Contrubition-guideline - Map Action Model</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -55,11 +55,11 @@
                             <li class="navitem">
                                 <a href="../modelTraining/" class="nav-link">Model training</a>
                             </li>
-                            <li class="navitem active">
-                                <a href="./" class="nav-link">Setup and Run</a>
-                            </li>
                             <li class="navitem">
-                                <a href="../contrubition-guideline/" class="nav-link">Contrubition-guideline</a>
+                                <a href="../install/" class="nav-link">Setup and Run</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Contrubition-guideline</a>
                             </li>
                         </ul>
 
@@ -70,12 +70,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../modelTraining/" class="nav-link">
+                                <a rel="prev" href="../install/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../contrubition-guideline/" class="nav-link">
+                                <a rel="next" class="nav-link disabled">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -96,50 +96,69 @@
     
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
-            
-            <li class="nav-item" data-level="1"><a href="#setup-and-running-process" class="nav-link">Setup and Running Process</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#overview" class="nav-link">Overview</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#environment-setup" class="nav-link">Environment Setup</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="1"><a href="#environment-configuration" class="nav-link">Environment configuration</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#running-the-training-pipeline" class="nav-link">Running the Training Pipeline</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-              </ul>
-            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="setup-and-running-process">Setup and Running Process</h1>
-<h2 id="overview">Overview</h2>
-<p>This section outlines the steps required to set up and run the continuous training pipeline for the machine learning model using Docker Compose. The process involves configuring environment variables and utilizing a Docker Compose file to automate the deployment and operation of the training environment.</p>
-<h2 id="environment-setup">Environment Setup</h2>
-<h3 id="configuring-environment-variables">Configuring Environment Variables</h3>
-<p>Before launching the training pipeline, it is crucial to set up the required environment variables. These variables are essential for configuring the application's settings and ensuring the correct operation of the Docker containers.</p>
-<p><code>Create an</code>.env<code>file in the root directory of your project with the following structure:</code></p>
-<h1 id="environment-configuration">Environment configuration</h1>
-<p><code>DAGSHUB_REPO_OWNER=your_dagshub_username
-DAGSHUB_REPO=your_repository_name
-DATASOURCE_NAME=your_datasource_name</code></p>
-<h2 id="running-the-training-pipeline">Running the Training Pipeline</h2>
-<p>To run the continuous training pipeline, use the Docker Compose file specifically prepared for this purpose. The Docker Compose configuration manages the necessary services, volumes, and networks to facilitate the training process.</p>
-<h3 id="starting-the-pipeline">Starting the Pipeline</h3>
-<p>Run the following command in your terminal to start the training pipeline:</p>
-<pre><code>docker-compose -f _ct.yml up
-</code></pre></div>
+<p>Map Action Contribution Guidelines</p>
+<p>Welcome to Map Action! We're excited about your interest in contributing to our open-source project. These guidelines will help you understand how to effectively contribute to our codebase.</p>
+<p>About Map Action</p>
+<p>Map Action is a Bamako-based trailblazer in using mapping technology to tackle environmental challenges and solve urban issues. Our innovative approach began by addressing Water, Sanitation, and Hygiene (WASH) problems and has grown to encompass various sectors through collaboration with civil society, governments, NGOs, and private entities.</p>
+<p>Our sustainable business model includes paid subscriptions for organizations that rely on our data to gain actionable insights across diverse domains. This model allows us to continuously enhance our offerings.</p>
+<p>Contributing</p>
+<p>We welcome contributions of all shapes and sizes! Here are the different ways you can get involved:</p>
+<pre><code>Report bugs and request features: Identify any issues you encounter while using our tools. You can report them directly on GitHub Issues https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues.
+Submit code changes: If you have improvements or new features in mind, you can contribute code by creating pull requests (PRs).
+Write documentation or tutorials: Enhance our documentation to make it easier for others to understand and use our tools.
+Help with code reviews and testing: Lend your expertise by reviewing pull requests submitted by others and assisting with testing efforts.
+</code></pre>
+<p>Finding Issues to Work On</p>
+<pre><code>Browse our issue tracker on GitHub Issues https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues to find existing issues.
+Look for issues labeled "help wanted" or those categorized as bugs or enhancements that you're interested in tackling.
+</code></pre>
+<p>Making Changes</p>
+<pre><code>Fork the Repository:
+    Visit the Map Action project on GitHub: https://github.com/223MapAction
+    Click on the "Fork" button to create your own copy of the repository.
+
+Create a Branch:
+    Clone your forked repository to your local machine.
+    Create a new branch for your specific changes.
+    Use a descriptive branch name that reflects your contribution (e.g., "fix-map-loading-bug").
+
+Code and Commit:
+    Make your changes to the codebase.
+    Write clear and concise commit messages that describe your modifications.
+
+Testing:
+    Ensure your changes don't introduce any regressions.
+    We use pytest and flake8 for testing. Make sure your code passes all tests before submitting a pull request.
+</code></pre>
+<p>Submitting Pull Requests</p>
+<pre><code>Push to Your Branch:
+    Once you're satisfied with your changes, push your local branch to your forked repository on GitHub.
+
+Open a Pull Request:
+    Navigate to your forked repository on GitHub and go to the "Pull Requests" tab.
+    Click on "New pull request" and select the branch containing your changes.
+    Create a pull request with a clear and descriptive title and explanation of your modifications.
+    Mention any issues your pull request addresses.
+
+Code Review:
+    Our internal code review process involves two Map Action developers.
+    They'll review your pull request and provide feedback or suggestions for improvement.
+
+Merge:
+    Once your pull request is approved and any necessary changes are made, it will be merged into the main codebase.
+</code></pre>
+<p>Additional Notes</p>
+<pre><code>License: All our repositories use the GPL-3.0 license. Ensure your contributions comply with the license terms.
+Code of Conduct: We value a respectful and inclusive environment. Please familiarize yourself with our [Code of Conduct](CODE_OF_CONDUCT.md) before contributing. 
+Appreciation: We appreciate all contributions, regardless of their scope. Thank you for helping us improve Map Action!
+</code></pre>
+<p>We look forward to your contributions!</p>
+<p>This tailored guide incorporates the information you provided, making it specific to the Map Action project and its contribution workflow.</p></div>
             </div>
         </div>
 
