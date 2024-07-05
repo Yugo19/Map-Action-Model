@@ -6,4 +6,4 @@ services:
     build:
       context: .
       dockerfile: ./services/unittesting/Dockerfile
-    command: ["pytest", "-n", "auto", "--asyncio-mode=auto", "--cov=.", "--cov-report=xml", "--cov-report=term-missing"]
+    command: ["pytest", "-n", "auto", "--asyncio-mode=auto", "--cov=.", "--cov-report=xml:/app/coverage/coverage.xml", "--cov-report=term-missing"]

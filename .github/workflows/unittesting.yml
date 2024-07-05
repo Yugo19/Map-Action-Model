@@ -21,6 +21,11 @@ jobs:
         run: |
           docker-compose -f _ci.yml run --rm app-test || true
 
+      - name: Copy Coverage Report
+        run: |
+          container_id=$(docker-compose -f _ci.yml ps -q app-test)
+          docker cp $container_id:/app/coverage/coverage.xml .
+
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v4.0.1
         with:
